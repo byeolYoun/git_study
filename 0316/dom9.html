@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* img{
+            width : 100px;
+            height : 100px;
+            } */
+    </style>
+</head>
+<body>
+    <img src="img/bbang1.gif" alt=""><br>
+    <button>이미지 변경</button>
+
+    <script>
+        const img = document.querySelector('img');
+        const btn = document.querySelector('button');
+
+        btn.addEventListener('click', function(){
+            //setAttribute(속성이름, 속성값);
+            img.setAttribute('src', 'img/bbang3.gif')
+        })
+
+    </script>
+</body>
+</html>

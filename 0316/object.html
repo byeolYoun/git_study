@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체(Object)
+        let name = 'Wilson';
+        let age = 6;
+
+        let person = {
+            name : 'Hayoung',
+            age : 26,
+            greet : function(){
+                // this를 이용하여 위에 선언된 이름과 나이를 불러온다.
+                console.log(`${this.name}입니다. 나이는 ${this.age}입니다.`)
+            }
+        };
+
+        // greet를 호출
+        person.greet();
+        
+        // 동적으로 속성 추가
+        person.gender = '여자';
+        person.hobby = ['영화', '드라마보기', '유튜브보기'];
+        person.favoriteFood = [
+            {
+                name : '삼겹살', 
+                topping : ['돼지고기', '버섯', '마늘', '파절이', '쌈무', '명이나물', '꾸운 파', '쌈장', '상추', '김치', '밥']
+            },
+            {
+                name : '김치찌개',
+                topping : ['김치', '돼지고기', '팽이버섯', '햄', '밥']
+            }
+        ]
+
+        console.log(person);
+        console.log('취미 >> ', person.hobby[1]);
+        console.log('좋아하는 음식 >> ', person.favoriteFood[0].name);
+        console.log('좋아하는 음식의 토핑 >> ', person.favoriteFood[0].topping);
+        
+
+        
+    </script>
+</body>
+</html>

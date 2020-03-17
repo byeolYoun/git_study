@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>여행 준비물 점검 목록</title>
+	<link rel="stylesheet" href="css/input.css">
+	<link rel="stylesheet" href="css/list.css">
+</head>
+<body>
+	<div id="wrapper">
+		<h2>여행 준비물 점검 목록</h2>
+		<form>
+			<input type="text" id="item" autofocus="true">
+			<input type="button" id="add" class="addBtn" onclick="addItem()" value = 추가>
+		</form>
+		<div id="itemList"></div>
+	</div>    	
+	<script>
+		// input, button, div 요소들에 접근
+		const item = document.querySelector('#item'); 
+		const addBtn = document.querySelector('#add');
+		const itemList = document.querySelector('#itemList');
+
+		let items = [];
+
+		function addItem(){
+			// input 요소에 입력된 데이터 가져오기
+			// console.log(item.value);
+			items.push(item.value);
+			item.value = '';
+			item.focus();
+			console.log(items);
+
+			showItem();
+		}
+
+		function showItem(){
+			// div 요소에 배열에 저장된 데이터 출력
+			// innerHTML 속성 : 해당 태그 내 내용을 추가 / 가져오기
+			// itemList.innerHTML = '<ul><li>세면도구</li></ul>';
+			let html = '<ul>';
+			
+			// 배열에 저장된 데이터를 가져온 후,
+			// li 태그에 적용하여 생성하시오.
+			for(let i = 0; i < items.length; i++){
+				html += `<li>${items[i]}<span class = "close" id = "${i}">X</span></li>`;
+			}
+			
+			itemList.innerHTML = html + '</ul>'
+
+			let closeBtns = document.querySelectorAll('.close');
+			
+			for(let i = 0; i < closeBtns.length; i++){
+				// span 요소에 클릭 이벤트 등록
+				//addEventListener(이벤트 종류, 이벤트를 처리하는 함수)
+				// 이벤트 핸들러 : ㅎ마수의 이름만 작성
+				// why? 호출하는 형태로 작성하면 웹 브라우저가 
+				//		이벤트를 발생했을 때가 아닌 바로 실행
+		
+				closeBtns[i].addEventListener('click', removeItem);
+
+			}
+		}
+
+		function removeItem(){
+			// 해당 요소의 속성값 접근
+			// this : 이벤트 발생 시 해당 요소의 정보를 담는 변수
+			let pos = this.getAttribute('id');
+			items.splice(pos, 1);
+			showItem();
+		}
+	</script>
+
+</body>
+</html>

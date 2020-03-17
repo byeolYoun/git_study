@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    
+
+    <script>
+        //jquery-3.4.1.min.js파일을 먼저 로드한 후 jQuery 문법 사용
+
+        // javascript
+        // const h1 = document.querySelector('h1');
+        // console.log(h1.innerHTML);
+
+        //jQuery
+        // $(요소명|선택자) : HTML요소를 jQuery객체로 접근
+        // $(요소명|선택자).동작함수()
+
+        // 웹 페이지가 모두 로드되었을 떄 실행하는 함수
+        //$(document).ready(function(){});
+        
+        $(function(){
+            // h1 요소의 내용 접근
+            console.log($('h1').html());
+
+            // h1 요소의 내용 변경
+            $('body > #title').html('jQuery 내용 변경');
+
+            // 입력 요소 내용 접근
+            console.log($('input').val());
+
+            // 입력 요소 내용 변경
+            $('input').val('내용변경');
+        });
+
+
+    </script>
+</head>
+<body>
+    <h1 id="title">jQuery</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+    </ul>
+    <form action="">
+        <input type="text" value = "입력요소">
+    </form>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eius labore modi quos amet alias sapiente suscipit quasi deserunt esse odio quo nulla corporis doloremque porro totam omnis, ipsum harum!</p>
+
+</body>
+</html>

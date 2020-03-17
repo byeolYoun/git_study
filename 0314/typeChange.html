@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 형변환
+        // - 문자열 -> 숫자
+        // Number(), parseInt(), parseFloat()
+
+        // 나이 판별 프로그램
+        // 1. 나이 입력 ---> prompt()
+        // 2. 19세 이상이면 '성인' 아니면 '미성년자'를 출력(console창에 출력)
+        // => 조건문(if)
+
+        let age = prompt('나이를 입력해주세요:)');
+        
+        if(Number(age) >= 19){
+            console.log('성인입니다!😊');
+        }
+        else{
+            console.log('미성년자입니다.😁'); // 이모지 : 윈도우키 + .(>)키
+        }
+
+        console.log(Number('5'));
+        console.log(parseInt('5'));
+        
+        // 실수 데이터를 정수로 변환 할 때는 paseInt() 활용!
+        // Number()는 정수, 실수를 다 포함하기 때문에 정수로만 변환해주지 않음
+
+        console.log(Number('3.14'));
+        console.log(parseInt('3.14'));
+        
+    </script>
+    
+</body>
+</html>

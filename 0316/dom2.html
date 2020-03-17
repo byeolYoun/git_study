@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "num">0</p>
+    <!-- 
+        <input type="button" id = "up" value = '1 증가' onclick = "numUp()">
+        <input type="button" id = "down" value = '1 감소' onclick = "numDown()"> -->
+    <button>+1</button>
+    <button>-1 ( 0 이하로는 감소되지 않는다. )</button>
+    <script>
+        const num = document.getElementById("num");
+        const btns = document.getElementsByTagName('button');
+        
+
+        // 증가 버튼 이벤트 등록
+        btns[0].addEventListener('click', function(){
+            // innerHTML의 속성은 반환 타입 : String
+            num.innerHTML = Number(num.innerHTML) + 1;
+        });
+
+        btns[1].addEventListener('click', function(){
+            if(Number(num.innerHTML) > 0){
+                num.innerHTML = Number(num.innerHTML) - 1;
+            }            
+        });
+
+    </script>
+</body>
+</html>

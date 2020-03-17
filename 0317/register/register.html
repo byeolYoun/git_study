@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DOM - Create & Add Node</title>
+	<link rel="stylesheet" href="css/nameList.css">
+</head>
+<body>
+	<div id="container">
+		<h1>SM수강 신청</h1>
+		<form action="" onsubmit="return false;"> 
+			<!-- return false 입력값을 넘기지 않도록 막아놓을 때 사용 -->
+			<input type="text" id="userName" placeholder="이름" required>
+			<button>신청</button>
+		</form>
+		<hr>
+		<div id="nameList"></div>
+
+		<script>
+
+			const userName = document.querySelector('#userName');
+			const btn = document.querySelector('button');
+			const nameList = document.querySelector('#nameList');
+
+			// 버튼을 클릭 했을 때 신청자 이름을 p요소로 구성해서 nameList에 추가
+			btn.addEventListener('click', function(){
+				const new_p = document.createElement('p');
+				const new_txt = document.createTextNode(userName.value);
+
+				new_p.appendChild(new_txt);
+				// nameList.appendChild(new_p);
+				
+				// 맨 위로 신청자 추가(childNodes -> 자식노드에 앞에 집어 넣겠다.)
+				nameList.insertBefore(new_p, nameList.childNodes[0]);
+			})
+		</script>
+    </div>
+</body>
+</html>

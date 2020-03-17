@@ -1,0 +1,32 @@
+Cross Browser => 동등성
+< jquery > write less, do more.
+ : 모든 브라우저에서 동작하는 자바스크립트를 간편하게 사용할 수 있도록 
+  단순화시킨 오픈소스 기반 라이브러리
+
+jquery 문법 사용을 위한 2가지 방법
+1. jQuery 파일을 다운 받아 로드
+2. CDN(Content Delievery Network)을 이용하여 로드
+
+$(요소명|선택자)
+ : $(..)안에 선택자를 넣어
+
+$(요소명|선택자).동작 메소드
+ : 
+.html(htmlString)
+ : HTML code(contents 포함)를 접근하거나 초기화 하는 메소드 >
+
+.text(String)
+ : HTML요소의 contents(내용)만 접근하거나 초기화하는 메소드 >
+
+.css(style)
+ :
+
+ Event 
+  : 웹 페이지를 방문한 사용자가 수행하는 동작
+  on() 메소드: 특정 사건이 발생하느느 시점에 실행할 명령을 설정하는 메소드
+     $(요소|선택자).on(이벤트 종류, 이벤트 핸들러)
+
+  animate() : 처리 대상에 대한 애니메이션 효과를 줄 때 사용하는 메소드
+     $(selector).animate({css속성})
+
+     easing(이징) : 애니메이션 효과의 변화 속도

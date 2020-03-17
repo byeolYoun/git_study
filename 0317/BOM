@@ -1,0 +1,22 @@
+BOM(Browser Object Model)
+: Web Browser를 직접 제어할 수 있도록 Browser가 제공해주는 객체 모델 API
+  ex) Browser창, url, 버전 등..
+
+  window
+  - 모든 객체들의 공통된 Web Browser 최상위 객체
+  - Web Browser 화면(창, 프레임, url 등)을 제어
+  - 속성이나 함수를 사용할 때 document처럼 객체 이름 명시 X
+
+  screen
+  : 사용자의 디스플레이 화면에 대한 정보(속성)를 저장하는 객체
+
+  location
+  : 사용자 Browser의 주소 창에 url에 대한 정보와 새로고침 기능을 제공하는 객체
+
+  history
+  : 사용자가 방문한 사이트 중 다음 / 이전 으로 돌아갈 수 있는 객체
+
+  navigator
+  : 사용자가 사용하는 Browser 관련 정보를 제공하는 객체
+
+  

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id = "data" value = "내용 입력">
+        <input type="button" value = "출력">
+    </form>
+    <p id = "view"></p>
+    <script>
+        const data = document.getElementById('data');
+        const btn = document.querySelector('input[type=button]');
+        const view = document.getElementById('view');
+        const body = document.querySelector('body');
+
+        btn.addEventListener('click', function(){
+            // input 요소의 내용 접근
+            console.log(data.value);
+        });
+
+        // 키보드 이벤트 적용 : keypress, keydown, keyup
+        body.addEventListener('keyup', function(){
+            view.innerHTML = data.value;
+        });
+    </script>
+</body>
+</html>

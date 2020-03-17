@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/imageSlide.css">
+</head>
+<body>
+	<div id="img">
+		<input type="button" id="btn1" class="btn pre" value="<">
+		<input type="button" id="btn2" class="btn next" value=">">
+	</div>
+
+	<script>
+		const img = document.querySelector('#img');
+		const pre = document.querySelector('.pre');
+		const next = document.querySelector('.next');
+		let img_now = 1;
+
+		// 일정 시간이 지날 때마다 실행시키는 함수
+		// interval : 밀리초단위( 1000 = 1초 )
+		//setInterval(funtion(){ }) 과 같은 구조
+		setInterval(() => {
+			// ??
+			nextImg();
+		}, 1500);		
+
+		// pre, next 요소에 클릭 이벤트를 등록하시오.
+		pre.addEventListener('click', preImg);
+
+		function preImg(){
+			console.log('이전 이미지로 ~ ');
+			if(img_now == 1){
+				img_now = 14;
+			}
+			img_now --;
+			img.style.backgroundImage = `url(img/${img_now}.jpg)`;
+		};
+
+		next.addEventListener('click', nextImg);
+
+		function nextImg(){
+			console.log('다음 이미지로 ~');
+			img_now ++;
+			if(img_now > 14){
+				img_now = 1;
+			}
+			img.style.backgroundImage = `url(img/${img_now}.jpg)`;
+		};
+	</script>
+</body>
+</html>

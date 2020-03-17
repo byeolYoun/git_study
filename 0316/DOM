@@ -1,0 +1,13 @@
+DOM(Document Object Model)
+: HTML 문서의 모든 요소(태그)를 조작(내용변경, 스타일 변경)할 수 있도록 
+  객체를 사용해 문서를 해석하는 방법
+
+< 웹 브라우저가 HTML 문서를 해석하려는 순서 >
+WebBrowser 시작(사용자가 웹 페이지 방문)
+-> 웹 문서 읽기
+-> DOM 생성 (HTML을 모두 객체형태로 변환 -> Javascript로 접근 가능)
+-> 페이지 로딩완료 (스타일(CSS) 적용 / 화면 최종표시( 랜더링 ))
+
+
+HTMLElement
+AnchorElement -> a태그

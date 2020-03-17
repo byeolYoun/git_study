@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .success, .fail{color : white;}
+    .success{background-color : limegreen;}
+    .fail{background-color: tomato;}
+</style>
+</head>
+<body>
+    <h1>숫자 추측 게임</h1>
+    <div class="">
+        1부터 100까지의 숫자 중에서 하나의 숫자를 뽑았습니다.<br>
+        당신이 추측할 수 있는 기회는 10번입니다.<br>
+        추측한 숫자가 높다거나 낮다는 알림을 드리겠습니다. <br><br>
+    </div>
+    <form action="">
+        <input type="text" id = "guess">
+        <input type="button" value = "추측">
+    </form>
+    <p id = "pre_result">이전 결과 : </p>
+    
+    <div id = "result"></div>
+    
+    <script>
+        // 랜덤 값 생성(난수 생성)
+        let rdNum = parseInt(Math.random() * 100 + 1);
+        let count = 0;
+
+        const guess_num = document.getElementById('guess');
+        const guess_btn = document.querySelector('input[type=button]');
+        const pre_result = document.getElementById('pre_result');
+        const result = document.getElementById('result');
+
+        // 버튼에 이벤트 발생
+        guess_btn.addEventListener('click', function(){
+            count += 1;
+            if(count === 10){
+                result.innerHTML = '<span class ="fail">도전 실패...😒</span>';
+                // 버튼 비활성화
+                guess_btn.disabled = true;
+            }
+
+            if(Number(guess_num.value) == rdNum){
+                guess_btn.disabled = true;
+                result.innerHTML = '<span class = "success">도전 성공!!😊</span>';
+            }
+            else if(Number(guess_num.value) > rdNum){
+                
+                pre_result.innerHTML += guess_num.value + ' ';
+                result.innerHTML = '<span class = "fail">더 작은 수를 입력하세용!</span>';
+             
+            }
+            else{
+                pre_result.innerHTML += guess_num.value + ' ';
+                result.innerHTML = '<span class = "fail">더 큰 수를 입력하세요!</span>';
+             
+            }
+            
+
+        });
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- "." + enter => div태그 -->
+
+    <div class="movieList"></div>
+    <button>영화 정보 요청</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+
+        $(function(){
+            $('button').on('click', function(){
+                $.ajax({
+                    url : 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20200316',
+                    success : function(res_data){
+
+                        console.log('요청 성공!');
+                        console.log(res_data);
+
+                        // 1 ~ 10위까지의 영화제목을 console창에 출력하시오.
+                        let movieList = res_data.boxOfficeResult.dailyBoxOfficeList;
+                        for(let i = 0; i < movieList.length; i++){
+                            console.log(movieList[i].movieNm);
+                        }
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main > img{width: 310px; height: 310px;}
+        .sub{width: 310px; height: 100px; display: flex; justify-content: space-between;} 
+        .sub > .img-area > img{width: 100px; height: 100px; cursor: pointer;}
+    </style>
+
+</head>
+<body>
+    <h1>방울이와 빵빵이</h1>
+    <div class="container">
+        <div class="main">
+            <img src="img/cf1.gif" alt="">
+        </div>
+        <div class="sub">
+            <div class="img-area"><img src="img/bbang3.gif" alt=""></div>
+            <div class="img-area"><img src="img/cf3.gif" alt=""></div>
+            <div class="img-area"><img src="img/cf4.gif" alt=""></div>
+        </div>
+    </div>
+
+    <script>
+        const mainImg = document.querySelector('.main > img');
+        const subImgs = document.querySelectorAll('.sub img');
+
+        for(let i = 0; i < subImgs.length; i++){
+            subImgs[i].addEventListener('click',changeImg);
+        }
+
+        function changeImg(){
+                // 메인 이미지와 선택된 이미지의 위치 변경(치환)
+                let tempSrc = mainImg.getAttribute('src');
+                mainImg.setAttribute('src', this.getAttribute('src'));
+                this.setAttribute('src', tempSrc);
+
+            }
+    </script>
+</body>
+</html>

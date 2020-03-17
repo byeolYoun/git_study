@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 동기 방식
+        console.log('a');
+        console.log('b');
+        console.log('c');
+
+         // 비동기 방식(통신)
+        console.log('a');
+        setTimeout(function(){
+            console.log('b');
+        }, 3000);
+        console.log('c');
+    </script>
+</body>
+</html>

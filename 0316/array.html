@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열 선언
+        let array = []; // 빈 배열 생성
+
+        // 배열 저장 - 인덱스 활용
+        array[0] = 1;
+        array[1] = 2;
+        array[2] = 3;
+
+        // 배열 저장 -  함수 이용
+        array.push(4);
+        array.push(5);
+        array.push(6);
+        
+        // 데이터 수정
+        array[2] = 7;
+
+        console.log('저장된 데이터 >> ' , array);
+
+        // 데이터 읽어오기
+        console.log('3번째 인덱스의 값 >> ', array[3]);
+
+        // 데이터 삭제
+        // splice(인덱스, 삭제할 개수, 추가할 데이터)
+        array.splice(3, 3);
+        console.log(array);
+
+        array.splice(3, 3, 4, 5, 6);
+        console.log(array);
+
+    </script>
+</body>
+</html>

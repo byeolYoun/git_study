@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id = "msg">Hello HY!</p>
+
+    <script>
+        const msg = document.getElementById('msg');
+
+        // innerHTML : 해당 요소의 내용 접근 및 변경
+        //             시작 태그와 끝 태그를 가진 요소에 대해서만 접근 가능
+        
+        // p요소의 내용 접근
+        console.log(msg.innerHTML);
+
+        // p요소의 내용 변경
+        msg.innerHTML = '<h1>DOM 다루기!</h1>';
+        
+    </script>
+</body>
+</html>

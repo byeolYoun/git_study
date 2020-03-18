@@ -14,7 +14,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script>
 
-        $(function(){
+        $(function(){            
             $('button').on('click', function(){
                 $.ajax({
                     url : 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20200316',
@@ -25,9 +25,44 @@
 
                         // 1 ~ 10위까지의 영화제목을 console창에 출력하시오.
                         let movieList = res_data.boxOfficeResult.dailyBoxOfficeList;
-                        for(let i = 0; i < movieList.length; i++){
-                            console.log(movieList[i].movieNm);
-                        }
+                        
+                        // jQuery 방식
+                        const $movieList = $('.movieList');
+                        
+                        // 반복문
+                        // index -> 리스트에 있는 인덱스를 가르킴
+                        // movie -> 반복문 안에서 사용할 변수명(리스트의 인덱스에 들어있는 값)
+                        $.each(movieList, function(index, movie){
+                            // console.log(index, '/', movie);
+                            $movieList.append(`<p>영화순위:${movieList[i].rank}<br/>
+                                영화이름:${movieList[i].movieNm}<br/>
+                                개봉일:${movieList[i].openDt}<br/></p>`);
+                        });
+
+                        // for(let i = 0; i < movieList.length; i++){
+                            // 자바스크립트 방식
+                            // const new_p = document.createElement('p');
+                            // const new_txt1 = document.createTextNode(`영화순위:${movieList[i].rank}`);
+                            // const br1 = document.createElement('br');
+                            // const new_txt2 = document.createTextNode(`영화이름:${movieList[i].movieNm}`);
+                            // const br2 = document.createElement('br');
+                            // const new_txt3 = document.createTextNode(`개봉일:${movieList[i].openDt}`);
+                            // const br3 = document.createElement('br');
+
+                            // new_p.appendChild(new_txt1);
+                            // new_p.appendChild(br1);
+                            // new_p.appendChild(new_txt2);
+                            // new_p.appendChild(br2);
+                            // new_p.appendChild(new_txt3);
+                            // new_p.appendChild(br3);
+                            // movieLists.appendChild(new_p);
+                            
+                            // jQuery 방식
+                            // $('body > .movieList').append(`<p>영화순위:${movieList[i].rank}<br/>
+                            //    영화이름:${movieList[i].movieNm}<br/>
+                            //    개봉일:${movieList[i].openDt}<br/></p>`);
+
+                        // }
                     }
                 });
             });
